@@ -12,10 +12,14 @@ namespace TravelTripProje.Controllers
 
         Context context = new Context();
         BlogYorum blogYorum = new BlogYorum();
+        SonBlog sonBlog = new SonBlog();
         public ActionResult Index()
         {
-            var bloglar = context.Blogs.ToList();
-            return View(bloglar);
+            //var bloglar = context.Blogs.ToList();
+            blogYorum.Deger1 = context.Blogs.ToList();
+            IEnumerable<Blog> blogs = context.Blogs.OrderByDescending(x => x.ID).Take(3).ToList();
+            ViewBag.Deger2 = blogs;
+            return View(blogYorum);
         }
         public ActionResult BlogDetay(int id)
         {
