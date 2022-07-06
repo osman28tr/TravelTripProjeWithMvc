@@ -15,5 +15,17 @@ namespace TravelTripProje.Controllers
             var degerler = context.Blogs.ToList();
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult YeniBlog()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniBlog(Blog blog)
+        {
+            context.Blogs.Add(blog);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
