@@ -27,5 +27,27 @@ namespace TravelTripProje.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult BlogSil(int id)
+        {
+            var blog = context.Blogs.Find(id);
+            context.Blogs.Remove(blog);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult BlogGetir(int id)
+        {
+            var blog = context.Blogs.Find(id);
+            return View("BlogGetir", blog);
+        }
+        public ActionResult BlogGuncelle(Blog blog)
+        {
+            var yeniBlog = context.Blogs.Find(blog.ID);
+            yeniBlog.Aciklama = blog.Aciklama;
+            yeniBlog.Baslik = blog.Baslik;
+            yeniBlog.BlogResim = blog.BlogResim;
+            yeniBlog.Tarih = blog.Tarih;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
