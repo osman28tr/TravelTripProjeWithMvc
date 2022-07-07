@@ -1,0 +1,45 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Hakkimizda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ProjectLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            font-family: "Times New Roman", Georgia, Serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="w3-content" style="max-width:1100px">
+        <div class="w3-row w3-padding-64" id="about">
+            @foreach (var x in Model)
+            {
+                <div class="w3-col m7 w3-padding-large w3-hide-small">
+                    <img src="@x.FotoUrl" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+                </div>
+
+                <div class="w3-col m5 w3-padding-large">
+                    <p>
+                        @x.Aciklama
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
+
+
