@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminIletisimController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\GirisYapController.cs" />
@@ -271,6 +272,7 @@
     <Content Include="Views\GirisYap\Index.cshtml" />
     <Content Include="Views\GirisYap\Login.cshtml" />
     <Content Include="Views\Iletisim\Index.cshtml" />
+    <Content Include="Views\AdminIletisim\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
